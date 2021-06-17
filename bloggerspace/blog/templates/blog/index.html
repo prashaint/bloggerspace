@@ -7,8 +7,8 @@
     {% block content %}
     <section id="welcome">
     <header>
-        <img src=" " alt="BloggerSpace image" >
-        <h1>BloggerSpace Welcome Page</h1>
+        <img src="{% static "blog/images/blog2.jpg" %}" alt="BloggerSpace image" >
+        <h2 class="welcome h2">BloggerSpace</h2>
     </header>
     <p>Welcome to BloggerSpace! </p>
     </section>
@@ -17,7 +17,13 @@
     <header>
         <h2>Latest blog posts  </h2>
     </header>
+        <ul>
+            {% include "blog/includes/post.html" %}
+        </ul>
     </section>
-    
+    <section id="about">
+            <h2>About the auther</h2>
+            <p>Hi, I am Prashaint Mishra. I love programming.</p>
+    </section>
     {% endblock content %}
 
