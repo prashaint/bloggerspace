@@ -1,9 +1,21 @@
 
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 30px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 50%;
+}
+
+
 a {
   text-decoration: none;
 }
 
 a:hover,
 a:active {
-  color: #c956f7;
+  color: #c827dd;
 }
+
+

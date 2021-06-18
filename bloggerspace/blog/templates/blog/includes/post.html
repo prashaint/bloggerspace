@@ -1,12 +1,13 @@
 {% load static %}
 <li>
-                <article class="post">
-                        <a href="">
-                            <img src="{% static "blog/images/spark.jpg" %}" alt="spark image">
-                            <div class="post__content">
-                                <h3>Spark Basics</h3>
-                                <p>Spark is cluster computing processing engine. It is almost 100x faster than Hadoop map-reduce engine.</p>
-                            </div>
-                        </a>
-                </article>
+    <div class="post__content">
+      <article class="blog-post">
+      <a href="{% url 'post-detail' post.slug %}" >
+      <img src="{% static 'blog/images'|add:post.image  %}" alt="{{ post.title }}">
+        <h2 class="blog-post-title">{{ post.title }}</h2>
+        <p class="blog-post-meta">January 1, 2021 by <a href="#">Prashaint</a></p>
+        <p>{{ post.excerts }}</p>
+        <hr>
+      </article>
+    </div>
 </li>
