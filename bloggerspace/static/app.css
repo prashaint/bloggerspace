@@ -1,10 +1,9 @@
 
 a {
   text-decoration: none;
-  font-weight: bold;
 }
 
 a:hover,
 a:active {
-  color: #cf79f1;
+  color: #c956f7;
 }
