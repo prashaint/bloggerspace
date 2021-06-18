@@ -1,0 +1,24 @@
+#latest-posts {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 12px;
+    width: 60rem;
+    margin: -6rem auto 2rem auto;
+    box-shadow: 1px 1px 12px rgba(0, 0, 0, 0.4);
+  }
+  
+  #latest-posts h2 {
+    text-align: center;
+  }
+  
+  #latest-posts ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 1rem;
+  }
+  
+  #latest-posts li {
+    flex: 1;
+  }

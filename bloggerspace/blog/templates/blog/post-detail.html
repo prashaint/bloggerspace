@@ -1,0 +1,27 @@
+{% extends 'base2.html' %}
+{% load static %}
+    {% block page_title %} BloggerSpace - Post Details{% endblock page_title %}
+    {% block css_files %}
+       <link rel="stylesheet" href="{% static "blog/index.css" %}"> </link>
+    {% endblock css_files %}
+    {% block content %}
+<main>
+    <div class="p-4 p-md-5 mb-4 text-white rounded bg-dark">
+        <div class="col-md-6 px-0">
+        <h1 class="display-4 fst">Detailed Post Page</h1>
+        <p class="lead my-3">Multiple lines of text that form the lede, informing new readers quickly and efficiently about what’s most interesting in this post’s contents.</p>
+        <p class="lead mb-0"><a href="#" class="text-white fw-bold">Continue reading...</a></p>
+        </div>
+   </div>
+
+      <article class="blog-post">
+        <h2 class="blog-post-title">Blog Post Title</h2>
+        <p class="blog-post-meta">January 1, 2021 by <a href="#">Prashaint</a></p>
+
+        <p>This blog post shows a few different types of content that’s supported and styled with Bootstrap. Basic typography, lists, tables, images, code, and more are all supported as expected.</p>
+        <hr>
+        <p>This is some additional paragraph placeholder content. It has been written to fill the available space and show how a longer snippet of text affects the surrounding content. We'll repeat it often to keep the demonstration flowing, so be on the lookout for this exact same string of text.</p>
+        
+      </article>
+</main>
+    {% endblock content %}
