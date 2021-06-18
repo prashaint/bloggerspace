@@ -1,29 +1,10 @@
-{% extends 'base.html' %}
+{% extends 'base2.html' %}
 {% load static %}
-    {% block page_title %} BloggerSpace {% endblock page_title %}
+    
     {% block css_files %}
-       <link rel="stylesheet" href="{% static "blog/index.css" %}"> </link>
+        
     {% endblock css_files %}
     {% block content %}
-    <section id="welcome">
-    <header>
-        <img src="{% static "blog/images/blog2.jpg" %}" alt="BloggerSpace image" >
-        <h2 class="welcome h2">BloggerSpace</h2>
-    </header>
-    <p>Welcome to BloggerSpace! </p>
-    </section>
-
-    <section id="latest-posts">
-    <header>
-        <h2>Latest blog posts  </h2>
-    </header>
-        <ul>
-            {% include "blog/includes/post.html" %}
-        </ul>
-    </section>
-    <section id="about">
-            <h2>About the auther</h2>
-            <p>Hi, I am Prashaint Mishra. I love programming.</p>
-    </section>
+    
     {% endblock content %}
 
