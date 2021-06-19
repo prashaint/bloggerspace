@@ -4,9 +4,9 @@
       <article class="blog-post">
       <a href="{% url 'post-detail' post.slug %}" >
       <img src="{% static 'blog/images'|add:post.image  %}" alt="{{ post.title }}">
-        <h2 class="blog-post-title">{{ post.title }}</h2>
-        <p class="blog-post-meta">January 1, 2021 by <a href="#">Prashaint</a></p>
-        <p>{{ post.excerts }}</p>
+        <h4 class="blog-post-title">{{ post.title }}</h4>
+        <p class="blog-post-meta">{{ post.date|date:"D d M Y" }} by <a href="#">{{ post.author }}</a></p>
+        <p>{{ post.excerpt }}</p>
         <hr>
       </article>
     </div>

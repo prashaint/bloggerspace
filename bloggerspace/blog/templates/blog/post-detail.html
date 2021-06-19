@@ -7,7 +7,7 @@
 <main>
     <div class="p-4 p-md-5 mb-4 text-white rounded bg-dark container">
         <div class="col-md-6 px-0">
-        <h1 class="display-4 fst">{{ post.title }}</h1>
+        <h3 class="display-4 fst">{{ post.title }}</h3>
         <p class="lead my-3">{{ post.excerts }}</p>
         <p class="blog-post">{{ post.date|date:"D d M Y" }} by <a href="#">{{ post.author }}</a></p>
         </div>
@@ -16,7 +16,7 @@
     <div class="container">
       <article class="blog-post">
       <img src="{% static 'blog/images'|add:post.image  %}" alt="{{ post.title }}">
-        <p>{{ post.content }}</p>
+        <p>{{ post.content|linebreaks }}</p>
       </article>
     </div>
 </main>
