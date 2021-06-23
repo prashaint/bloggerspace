@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_list_or_404
-from .models import Post
+from .models import Post, Author, Tag
 
 # Create your views here.
 
@@ -16,7 +16,9 @@ def posts(request):
     })
 
 def post_detail(request, slug):
-    found_post = get_list_or_404(Post, slug=slug)
+    #found_post=get_list_or_404(Post, slug=slug)
+    found_post = Post.objects.get(slug=slug)
     return render(request, "blog/post-detail.html", {
-        "post": found_post
+        "post": found_post,
+        
     })
