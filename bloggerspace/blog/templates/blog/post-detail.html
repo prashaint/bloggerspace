@@ -18,7 +18,6 @@
         <p class="blog-post">{{ post.date|date:"D d M Y" }} by <a href="mailto:{{ post.author.email_address }}">{{ post.author }}</a></p>
         </div>
    </div>
-
     <div class="container">
       <article class="blog-post">
       <img src="{{ post.image.url }}" alt="{{ post.title }}">
@@ -27,4 +26,41 @@
     </div>
   </div>
 </main>
-    {% endblock content %}
+
+<section class="container">
+{% for comment in comments %}
+<p></p>
+<div class="card">
+  <div class="card-header text-center text-primary">
+  {{ comment.user_name }}'s Comments 
+  </div>
+  <div class="card-body">
+    <p class="card-text">{{ comment.text|linebreaks }}</p>
+  </div>
+</div>
+{% endfor %}
+<br><br>  
+
+</section>
+<section class="container">
+  <div class="card">
+  <div class="card-header text-center text-primary"><h4>Post your comment</h4></div>
+  <form action="{% url "post-detail" post.slug %}", method="POST"> 
+   {% csrf_token %}
+    {% for form_field in comment_form %}
+    <div class="form-control {% if form_field.errors %}invalid{% endif %}">
+    <p></p>
+      {{ form_field.label_tag }}
+      <br>
+      {{ form_field }}
+      {{ form_field.errors }}
+    </div>
+    {% endfor %}
+    <br>
+    <button type="submit" class="btn btn-primary">Save Comment</button>
+    <br><br>
+  </form>
+</div>
+</section>
+<br><br>
+  {% endblock content %}

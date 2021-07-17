@@ -22,3 +22,20 @@
   #latest-posts li {
     flex: 1;
   }
+
+  .error_list {
+      list-style: none;
+      margin: 0.5rem 0;
+      padding: 0;
+      color: rgb(141, 7, 7);
+  }
+
+  .invalid label {
+      color: rgb(141, 7, 7);
+  }
+
+  .invalid input,
+  .invalid textarea {
+    border-color: rgb(141, 7, 7);
+    background-color: rgb(252, 133, 198);
+}
