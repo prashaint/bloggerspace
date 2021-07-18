@@ -5,26 +5,32 @@
     {% endblock css_files %}
     {% block content %}
 <main>
-<div class="post__content">
-    <div class="p-4 p-md-5 mb-4 text-white rounded bg-dark container">
-        <div class="col-md-6 px-0">
-        <h3 class="display-4 fst">{{ post.title }}</h3>
+
+<main class="container">
+  <div class="p-4 p-md-5 mb-4 text-white rounded bg-dark">
+    <div class="col-md-6 px-0">
+        <h3 class="display-6">{{ post.title }}</h3>
         <div>
             {% for tag in post_tags %}
-                <span>{{ tag.caption }}</span>
+                <span class="badge rounded-pill bg-primary">{{ tag.caption }}</span>
             {% endfor %}
         </div>
         <p class="lead my-3">{{ post.excerts }}</p>
-        <p class="blog-post">{{ post.date|date:"D d M Y" }} by <a href="mailto:{{ post.author.email_address }}">{{ post.author }}</a></p>
+        <p class="blog-post">Last updated on {{ post.date|date:"D d M Y" }} by <a href="mailto:{{ post.author.email_address }}">{{ post.author }}</a></p>
         </div>
    </div>
     <div class="container">
-      <article class="blog-post">
-      <img src="{{ post.image.url }}" alt="{{ post.title }}">
-        <p>{{ post.content|linebreaks }}</p>
-      </article>
+          <img src="{{ post.image.url }}" alt="{{ post.title }}" width="250" height="250" preserveAspectRatio="xMidYMid slice">
     </div>
-  </div>
+    
+    <div class="container">
+      <div class="card">
+           <div class="card-body">
+            <p>{{ post.content|linebreaks }}</p>
+            </div>
+      </div>
+    </div>
+
 </main>
 
 <section class="container">

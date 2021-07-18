@@ -1,12 +1,18 @@
-<li>
-    <div class="post__content">
-      <article class="blog-post">
-      <a href="{% url 'post-detail' post.slug %}" >
-      <img src="{{ post.image.url }}" alt="{{ post.title }}">
-        <h4 class="blog-post-title">{{ post.title }}</h4>
-        <p class="blog-post-meta">{{ post.date|date:"D d M Y" }} by <a href="mailto:{{ post.author.email_address }}">{{ post.author }}</a></p>
-        <p>{{ post.excerpt }}</p>
-        <hr>
-      </article>
+
+    <div class="col-md-6">
+      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block mb-2 text-primary">Technology</strong>
+          <h4 class="mb-0">{{ post.title }}</h4>
+          <div class="mb-1 text-muted">Last updated on {{ post.date|date:"D d M Y" }} by <a href="mailto:{{ post.author.email_address }}">{{ post.author }}</div>
+          <p class="card-text mb-auto">{{ post.excerpt }}</p>
+          <p>
+          <br>
+          <a href="{% url 'post-detail' post.slug %}" class="btn btn-outline-primary btn-sm">Continue reading</a>
+          </p>
+        </div>
+        <div class="col-auto d-none d-lg-block">
+           <img src="{{ post.image.url }}" alt="{{ post.title }}" width="250" height="250" preserveAspectRatio="xMidYMid slice">
+        </div>
+      </div>
     </div>
-</li>

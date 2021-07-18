@@ -14,11 +14,13 @@
     </div>
   </div>
 
-<ul>
+<div class="row-cols-md-3">
+
     {% for post in all_posts %}
       {% include "blog/includes/post.html" %}
     {% endfor %}
-</ul>
+
+</div>
 
 </main>
     {% endblock content %}
