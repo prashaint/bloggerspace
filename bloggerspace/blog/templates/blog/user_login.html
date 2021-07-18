@@ -1,0 +1,25 @@
+{% extends 'base2.html' %}
+
+{% block content %}
+{% load static %}
+
+  <hr class="featurette-divider">
+  <div class="container">
+  <div class="card" >
+    <div class="card-header bg-info text-white"><h4>User Login Form</h4></div>
+    <div class="card-body">
+      <p><h5 class="text-success">Please fill following form to Login!</h5></p>
+        <p><h4 class="text-danger"> {{ error }} </h4></p>
+        <form method="POST">
+          {% csrf_token %}
+          {{ form.as_p }}
+          <button class="btn btn-outline-success" type="submit">Login</button>
+          <!-- <p><a class="btn btn-lg btn-primary" href="#" role="button" type="submit">Sign up!</a></p> -->
+        </form>
+    </div>
+    <div class="card-footer bg-light text-white text-muted">Powered by Django</div>
+  </div>
+</div>
+<hr class="featurette-divider">
+
+{% endblock %}

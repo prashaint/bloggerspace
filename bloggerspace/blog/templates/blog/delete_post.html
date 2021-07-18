@@ -1,0 +1,38 @@
+{% extends 'base2.html' %}
+
+{% block content %}
+{% load static %}
+
+  <hr class="featurette-divider">
+  <div class="container">
+    {% if user.is_authenticated %}
+  <div class="card" >
+    <div class="card-header bg-info text-white"><h4>Delete your blog post</h4></div>
+    <div class="card-body">
+      <p><h5 class="text-success">Following post will be deleted permanently once you click Delete Post</h5></p>
+      <p><h3 class="text-danger">{{ blog.title }}</h3></p>
+        <div class="form-group">
+        <form method="POST">
+          {% csrf_token %}
+          <button class="btn btn-outline-success" type="submit">Delete Post</button>
+          <!-- <p><a class="btn btn-lg btn-primary" href="#" role="button" type="submit">Sign up!</a></p> -->
+        </form>
+      </div>
+    </div>
+    <div class="card-footer bg-light text-white text-muted">Powered by Django</div>
+  </div>
+    {% else %}
+    <div class="card" >
+      <div class="card-header bg-info text-white"><h4>Unauthorized Access!</h4></div>
+      <div class="card-body">
+        <p><h3 class="text-danger">You're not authorized to perform this operation!</h3>
+          <h5 class="text-info">Please login to your account to write/edit/delete posts. </h5>
+        </p>
+      </div>
+      <div class="card-footer bg-light text-white text-muted">Powered by Django</div>
+    </div>
+    {% endif %}
+</div>
+<hr class="featurette-divider">
+
+{% endblock %}
