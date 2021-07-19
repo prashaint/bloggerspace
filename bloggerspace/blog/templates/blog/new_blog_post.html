@@ -3,11 +3,12 @@
 {% block content %}
 {% load static %}
 
-  <hr class="featurette-divider">
+  
   <div class="container">
+  <hr class="featurette-divider">
     {% if user.is_authenticated %}
-  <div class="card" >
-    <div class="card-header bg-info text-white"><h4>New blog creation form</h4></div>
+  <div class="card text-center border-success" >
+    <div class="card-header bg-success text-white"><h4>New blog creation form</h4></div>
     <div class="card-body">
       <p><h5 class="text-success">Please fill all the fields in order to post a new blog!</h5></p>
         <p><h4 class="text-danger"> {{ error }} </h4></p>
@@ -24,16 +25,19 @@
   </div>
     {% else %}
     <div class="card" >
-      <div class="card-header bg-info text-white"><h4>Unauthorized Access!</h4></div>
+      <div class="card-header bg-danger text-white"><h4>Unauthorized Access!</h4></div>
       <div class="card-body">
         <p><h3 class="text-danger">You're not authorized to perform this operation!</h3>
-          <h5 class="text-info">Please login to your account to write/edit/delete posts. </h5>
+          <h5 class="text-primary">Please login to your account to write/edit/delete posts. </h5>
+        </p>
+        <p>
+        <a class="btn btn-sm btn-outline-success" href="{% url 'blog:user_login' %}">Goto Login Page</a>
         </p>
       </div>
       <div class="card-footer bg-light text-white text-muted">Powered by Django</div>
     </div>
     {% endif %}
+    <hr class="featurette-divider">
 </div>
-<hr class="featurette-divider">
 
 {% endblock %}

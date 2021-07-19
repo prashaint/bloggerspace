@@ -50,8 +50,8 @@
 </section>
 <section class="container">
   <div class="card">
-  <div class="card-header text-center text-primary"><h4>Post your comment</h4></div>
-  <form action="{% url "post-detail" post.slug %}", method="POST"> 
+  <div class="card-header text-center text-primary"><h5>Post your comment</h5></div>
+  <form action="{% url "blog:post-detail" post.slug %}", method="POST"> 
    {% csrf_token %}
     {% for form_field in comment_form %}
     <div class="form-control {% if form_field.errors %}invalid{% endif %}">

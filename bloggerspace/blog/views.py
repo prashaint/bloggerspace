@@ -15,14 +15,14 @@ from .forms import PostForm
 # Create your views here.
 
 class UserPostView(ListView):
-    template_name = "blog/index.html"
+    template_name = "blog/user_posts.html"
     model = Post
     ordering = ["-date"]
     context_object_name = "posts"
 
     def get_queryset(self):
         queryset = super().get_queryset()
-        data = queryset[:3]
+        data = queryset
         return data
 
 class AllPostsView(ListView):
@@ -69,7 +69,7 @@ def new_blog_post(request):
 			new_blog = Post()
 			new_post_form = PostForm(request.POST, instance=new_blog)
 			new_post = new_post_form.save()
-			return redirect('blog:curr_user_blogs')
+			return redirect('blog:user_posts')
 		else:
 			return render(request, 'blog/new_blog_post.html', {'form':PostForm()})
 
@@ -79,14 +79,14 @@ class UpdatePostView(UpdateView):
 	fields = [ 'title', 'excerpt', 'image', 'content', 'tags' ]
 		
 	def get_success_url(self):
-		return reverse('blog:curr_user_blogs')
+		return reverse('blog:user_posts')
 
 class DeletePostView(DeleteView):
 	model = Post
 	template_name = 'blog/delete_post.html'
 
 	def get_success_url(self):
-		return reverse('blog:curr_user_blogs')       
+		return reverse('blog:user_posts')       
 
 
 def user_signup(request):
@@ -113,15 +113,12 @@ def user_login(request):
 			return render(request, 'blog/user_login.html', {'form':AuthenticationForm(), 'error':'Username or Password did not match'})
 		else:
 			login(request, user)
-			return redirect('blog:curr_user_blogs')
+			return redirect('blog:user_posts')
 
 def user_logout(request):
 	if request.method == 'POST':
 		logout(request)
 		return render(request, 'blog/user_logout.html')
 
-def curr_user_blogs(request):
-	blogs = Post.objects.all()
-	return render(request, 'blog/index.html')
 
 

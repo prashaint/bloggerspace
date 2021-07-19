@@ -3,10 +3,11 @@
 {% block content %}
 {% load static %}
 
-  <hr class="featurette-divider">
+ 
   <div class="container">
-  <div class="card" >
-    <div class="card-header bg-info text-white"><h4>User Login Form</h4></div>
+   <hr class="featurette-divider">
+  <div class="card text-center border-success" >
+    <div class="card-header bg-success text-white"><h4>User Login Form</h4></div>
     <div class="card-body">
       <p><h5 class="text-success">Please fill following form to Login!</h5></p>
         <p><h4 class="text-danger"> {{ error }} </h4></p>
@@ -19,7 +20,8 @@
     </div>
     <div class="card-footer bg-light text-white text-muted">Powered by Django</div>
   </div>
+  <hr class="featurette-divider">
 </div>
-<hr class="featurette-divider">
+
 
 {% endblock %}
